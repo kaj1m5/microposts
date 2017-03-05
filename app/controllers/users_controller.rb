@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   before_action :set_user, only: [:edit, :show, :update]
-  before_action :check_userid_session_vs_current, only: [:show, :edit, :update]
+  before_action :check_userid_session_vs_current, only: [:edit, :update]
 
   def edit
   end

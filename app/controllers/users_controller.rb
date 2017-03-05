@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   
   before_action :set_user, only: [:edit, :show, :update]
-  
+  before_action :check_request_with_session, only: [:show, :edit, :update]
+
   def edit
   end
   
@@ -42,4 +43,12 @@ class UsersController < ApplicationController
                                  :profile, :area,  
                                  :password_confirmation)
   end
+  
+  def check_request_with_session
+    if @user.id != session[:user_id]
+      flash[:danger] = "ログイン中のアカウントではありません．"
+      redirect_to login_url
+    end
+  end
+  
 end

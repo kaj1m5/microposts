@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   def check_userid_session_vs_current
     if @user.id != session[:user_id]
       flash[:danger] = "ログイン中のアカウントではありません．"
-      redirect_to current_user
+      redirect_to root_path
     end
   end
   

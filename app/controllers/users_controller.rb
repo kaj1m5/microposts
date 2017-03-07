@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   
-  def show
-    @user = User.find(params[:id])
-    @microposts = @user.microposts.order(created_at: :desc)
+  def show # 追加
+   @user = User.find(params[:id])
+   @microposts = @user.microposts.order(created_at: :desc)
   end
   
   def new
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @followings = @user.following_users
     render 'followings'
   end
-  
+
   private
 
   def user_params

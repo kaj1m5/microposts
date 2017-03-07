@@ -1,8 +1,3 @@
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
-
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -10,13 +5,9 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-    </section>
-    <section class="following_users">
       <%= link_to(followings_user_path(@user)) do %>
         <h4>Following (<%= @user.following_users.count %>)</h4>
       <% end %>
-    </section>
-    <section class="follower_users">
       <%= link_to(followers_user_path(@user)) do %>
         <h4>Follower (<%= @user.follower_users.count %>)</h4>
       <% end %>

@@ -40,8 +40,8 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :profile, :area,  
-                                 :password_confirmation)
+                                 :password_confirmation,
+                                 :profile, :area)
   end
   
   def check_userid_session_vs_current

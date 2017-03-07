@@ -155,6 +155,9 @@ aside {
   .content {
     display: block;
     margin-left: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     img {
       display: block;
       padding: 5px 0;
@@ -195,10 +198,9 @@ aside {
   .profile {
     display: block;
     margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .area {
     display: block;

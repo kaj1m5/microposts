@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # carrierwave for img upload
 gem 'carrierwave'
+gem "rmagick", '~> 2.13.1', :require => 'RMagick'
 gem 'cloudinary'
 
 gem 'bootstrap-sass'

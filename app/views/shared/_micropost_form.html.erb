@@ -4,6 +4,6 @@
     <%= f.text_area :content, placeholder: "Compose new micropost..." %>
   </div>
   <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-  <%= f.file_field :image%>
+  <%= f.file_field :image, accept: 'image/jpeg,image/jpg,image/gif,image/png' %>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

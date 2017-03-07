@@ -1,5 +1,23 @@
 class UsersController < ApplicationController
   
+  before_action :set_user, only: [:edit, :show, :update]
+  before_action :check_userid_session_vs_current, only: [:edit, :update]
+
+  def edit
+  end
+  
+  def show
+  end
+  
+  def update
+    if @user.update(user_params)
+      flash[:success] = "プロフィールを編集しました！"
+      redirect_to user_path
+    else
+      render 'edit'
+    end
+  end  
+  
   def show
    @user = User.find(params[:id])
    @microposts = @user.microposts.order(created_at: :desc)
@@ -30,9 +48,22 @@ class UsersController < ApplicationController
   end
 
   private
+  
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation)
+                                 :password_confirmation,
+                                 :profile, :area)
   end
+  
+  def check_userid_session_vs_current
+    if @user.id != session[:user_id]
+      flash[:danger] = "ログイン中のアカウントではありません．"
+      redirect_to root_path
+    end
+  end
+  
 end

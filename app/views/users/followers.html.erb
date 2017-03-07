@@ -10,11 +10,11 @@
   </aside>
   
   <div class="col-md-8">
-    <h3>Following (<%= @followings.count %>)</h3>
+    <h3>Follower (<%= @followers.count %>)</h3>
     
-    <% if @followings.any? %>
+    <% if @followers.any? %>
       <ol class="follow">
-        <%= render @followings %>
+        <%= render @followers %>
       </ol>
     <% end %>
 

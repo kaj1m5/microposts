@@ -11,6 +11,11 @@
         <h4>Following (<%= @user.following_users.count %>)</h4>
       <% end %>
     </section>
+    <section class="follower_users">
+      <%= link_to(followers_user_path(@user)) do %>
+        <h4>Follower (<%= @user.follower_users.count %>)</h4>
+      <% end %>
+    </section>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>

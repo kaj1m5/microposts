@@ -3,7 +3,7 @@
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content">
     <%= micropost.content %>
-    <% if micropost.image? %>
+    <% if micropost.image.present? %>
       <%= image_tag micropost.image.thumb.url %>
     <% end %>
   </span>
